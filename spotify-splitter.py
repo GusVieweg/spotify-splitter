@@ -31,11 +31,11 @@ bops_ids = []
 softs_ids = []
 
 # Sorting algorithm goes here
-for idx, song_id in enumerate(main_playlist.song_ids):
+for idx, af in enumerate(main_playlist.audio_features):
     if idx % 2:
-        bops_ids.append(song_id)
+        bops_ids.append(af['id'])
     else:
-        softs_ids.append(song_id)
+        softs_ids.append(af['id'])
 
 print(f"Separated playlist into {len(bops_ids)} bops and {len(softs_ids)} softs.")
 
