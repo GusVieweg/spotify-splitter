@@ -21,11 +21,7 @@ sp = spotipy.Spotify(
         client_secret=client_secret,
         redirect_uri=redirect_uri,
         scope=scope,
-<<<<<<< HEAD
         open_browser=False,
-=======
-        open_browser=False
->>>>>>> 15a2b215639a9333600dd0fc40f5cb8b1a6d009e
     )
 )
 
@@ -51,7 +47,7 @@ for af in main_playlist.audio_features:
     # DANCE
     if af["danceability"] > 0.75 or (af["valence"] > 0.75 and af["tempo"] > 130):
         dance_ids.append(af["id"])
-        print(af["song_name"], "by", af["artist"], "is a DANCE bop")
+        # print(af["song_name"], "by", af["artist"], "is a DANCE bop")
 
 
 print(
