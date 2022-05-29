@@ -1,3 +1,5 @@
+from datetime import date
+
 class Playlist:
     song_ids = []
     audio_features = []
@@ -44,13 +46,14 @@ class Playlist:
             name=playlist_name,
             public=True,
             collaborative=False,
-            description=playlist_name
+            description=f"Last updated on: {date.today().strftime('%B %d, %Y')}"
         )
         self.id = new_playlist['id']
     
     def update(self, song_id_list):
         self._clear()
         self._stagger_spotipy_request(self.sp.playlist_add_items, song_id_list)
+        self.sp.playlist_change_details(self.id, description=f"Last updated on: {date.today().strftime('%B %d, %Y')}")
     
     def _clear(self):
         self.get_all_song_ids_and_audio_features()
