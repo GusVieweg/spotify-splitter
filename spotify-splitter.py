@@ -21,7 +21,11 @@ sp = spotipy.Spotify(
         client_secret=client_secret,
         redirect_uri=redirect_uri,
         scope=scope,
+<<<<<<< HEAD
         open_browser=False,
+=======
+        open_browser=False
+>>>>>>> 15a2b215639a9333600dd0fc40f5cb8b1a6d009e
     )
 )
 
