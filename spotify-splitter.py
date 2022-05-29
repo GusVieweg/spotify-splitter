@@ -4,6 +4,8 @@ from Playlist import Playlist
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
 
+testing = False
+
 load_dotenv()
 
 client_id = os.getenv("SPOTIFY_CLIENT_ID")
@@ -18,7 +20,8 @@ sp = spotipy.Spotify(
         client_id=client_id,
         client_secret=client_secret,
         redirect_uri=redirect_uri,
-        scope=scope
+        scope=scope,
+        open_browser=False,
     )
 )
 
@@ -29,22 +32,36 @@ print("Pulled all songs and audio features from main playlist.")
 
 bops_ids = []
 softs_ids = []
+dance_ids = []
 
-# Sorting algorithm goes here
-for idx, af in enumerate(main_playlist.audio_features):
-    if idx % 2:
-        bops_ids.append(af['id'])
+# Sorting algorithm(s)
+for af in main_playlist.audio_features:
+    # bops vs. softs
+    if af["energy"] > 0.5:
+        bops_ids.append(af["id"])
+        # print(af["song_name"], "by", af["artist"], "is a bop")
     else:
-        softs_ids.append(af['id'])
+        softs_ids.append(af["id"])
+        # print(af["song_name"], "by", af["artist"], "is a soft")
 
-print(f"Separated playlist into {len(bops_ids)} bops and {len(softs_ids)} softs.")
+    # DANCE
+    if af["danceability"] > 0.75 or (af["valence"] > 0.75 and af["tempo"] > 130):
+        dance_ids.append(af["id"])
+        print(af["song_name"], "by", af["artist"], "is a DANCE bop")
 
-bops_playlist = Playlist(user, sp, playlist_name="b bops")
-print("Created b bops playlist object.")
-softs_playlist = Playlist(user, sp, playlist_name="b softs")
-print("Created b softs playlist object.")
 
-bops_playlist.update(bops_ids)
-print("Updated b bops playlist.")
-softs_playlist.update(softs_ids)
-print("Updated b softs playlist.")
+print(
+    f"Sorted playlist into {len(bops_ids)} bops, {len(softs_ids)} softs, and {len(dance_ids)} dance bops."
+)
+
+if testing != True:
+    bops_playlist = Playlist(user, sp, playlist_name="b bops")
+    softs_playlist = Playlist(user, sp, playlist_name="b softs")
+    dance_playlist = Playlist(user, sp, playlist_name="b dance")
+
+    bops_playlist.update(bops_ids)
+    print("Updated b bops playlist.")
+    softs_playlist.update(softs_ids)
+    print("Updated b softs playlist.")
+    dance_playlist.update(dance_ids)
+    print("Updated b dance playlist.")
