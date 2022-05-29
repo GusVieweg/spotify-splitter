@@ -1,6 +1,6 @@
 # Spotify Splitter
 
-### Goals and Purpose
+## Goals and Purpose
 [Addie](https://github.com/addiejackson) and I have created a large playlist of all the tunes we currently like.
 
 Oftentimes, we will want to put on a mood - currently either `bops` or `softs`.
@@ -13,7 +13,7 @@ There was no way for us to put on one mood of songs we currently like. We had to
 
 Enter Spotify Splitter.
 
-### Methodology
+## Methodology
 Spotify Splitter splits a large playlist into `bops` and `softs` based on a separation algorithm.
 
 Spotify characterizes all of their songs with various criteria called [Audio Features](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-audio-features).
@@ -30,7 +30,7 @@ if song['energy'] < 0.45:
 
 The current sorting algorithm can be found on the [spotify-splitter.py file](https://github.com/GusVieweg/spotify-splitter/blob/15a2b215639a9333600dd0fc40f5cb8b1a6d009e/spotify-splitter.py#L34). 
 
-### Deployment
+## Deployment
 To run this on your own playlists:
 
 1. Go to your [Spotify for Developers Dashboard](https://developer.spotify.com/dashboard/login) (SfDD).
