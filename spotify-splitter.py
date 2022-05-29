@@ -18,7 +18,8 @@ sp = spotipy.Spotify(
         client_id=client_id,
         client_secret=client_secret,
         redirect_uri=redirect_uri,
-        scope=scope
+        scope=scope,
+        open_browser=False
     )
 )
 
