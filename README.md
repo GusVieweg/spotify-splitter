@@ -37,11 +37,11 @@ To run this on your own playlists:
 3. Create a new app and call it "Spotify Splitter."
 4. Edit the "Spotify Splitter" app's settings and add an entry to "Redirect URIs": `http://localhost:8080/`. Be sure to save! 
 5. Create a `.env` in the base `spotify-splitter/` folder with the following environment variables:
-- `SPOTIFY_CLIENT_ID`: <your client id from the SfDD>
-- `SPOTIFY_CLIENT_SECRET`: <your client secret from the SfDD>
+- `SPOTIFY_CLIENT_ID`: your client id from the SfDD
+- `SPOTIFY_CLIENT_SECRET`: your client secret from the SfDD
 - `SPOTIFY_REDIRECT_URI`: `http://localhost:8080/`
-- `SPOTIFY_USER`: <your spotify username, as written on your Spotify Account page>
-- `MAIN_PLAYLIST_ID`: <the playlist id to split; you can find it on the Spotify Web Client in the url: `https://open.spotify.com/playlist/<playlist_id>`
+- `SPOTIFY_USER`: your spotify username, as written on your Spotify Account page
+- `MAIN_PLAYLIST_ID`: the playlist id to split; you can find it on the Spotify Web Client in the url: `https://open.spotify.com/playlist/<playlist_id>`
 6. Curate the sorting algorithm to your liking. Refer to the [Audio Features](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-audio-features) page for more sorting criteria.
 7. Change the `Playlist` objects' initialization (`playlist_name`) to your liking.
 
