@@ -28,7 +28,7 @@ if song['energy'] < 0.45:
     softs.add(song)
 ```
 
-The current sorting algorithm can be found on the [spotify-splitter.py file](https://github.com/GusVieweg/spotify-splitter/blob/15a2b215639a9333600dd0fc40f5cb8b1a6d009e/spotify-splitter.py#L34). 
+The current sorting algorithm can be found on the [spotify-splitter.py file](https://github.com/GusVieweg/spotify-splitter/blob/1b38a7e39edad6479df0d2a1e9a6448abe8df4c4/spotify-splitter.py#L37). 
 
 ## Deployment
 To run this on your own playlists:
