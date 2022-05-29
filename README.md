@@ -6,6 +6,7 @@
 Oftentimes, we will want to put on a mood - currently either `bops` or `softs`.
 
 Bops are for when things are good. The kids call them bangers. Think a boisterous Friday evening.
+
 Softs are for when things are mellow. The kids call them chill tunes. Think a ~~hungover~~ sleepy Saturday morning.
 
 There was no way for us to put on one mood of songs we currently like. We had to skip softs when we were in a bop mood and bops when we were in a soft mood.
