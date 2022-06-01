@@ -45,6 +45,7 @@ To run this on your own playlists:
 - `MAIN_PLAYLIST_ID`: the playlist id to split; you can find it on the Spotify Web Client in the url: `https://open.spotify.com/playlist/<playlist_id>`
 6. Curate the sorting algorithm to your liking. Refer to the [Audio Features](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-audio-features) page for more sorting criteria.
 7. Change the `Playlist` objects' initialization (`playlist_name`) to your liking.
+8. You may choose to run this on a cron job in order to keep updating your playlists on a regular basis. We run ours daily at midnight.
 
 You will have to authorize your Spotify account on first run.
 
