@@ -65,7 +65,7 @@ class Playlist:
             if len(song_ids) > 100:
                 operation(self.id, song_ids[:100])
                 song_ids = song_ids[100:]
-            elif len(song_ids) < 100 and len(song_ids) > 0:
+            elif len(song_ids) <= 100 and len(song_ids) > 0:
                 operation(self.id, song_ids)
                 staggering = False
             else:  # Song array is empty (either no songs or exactly 100, 200, 300... songs)
